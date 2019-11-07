@@ -1,6 +1,6 @@
 describe 'Create profile', :create_profile do
     before(:each) do
-        URL = "X"
+        URL = "https://wavezapp-homolog.appspot.com/_mocked_login"
         xpathEmail = '//*[@id="main"]/section/div/p[1]/label/input'
         user = 'User-'+ (Time.now.utc.strftime("%Y%m%d%H%M%S")).to_s
 
@@ -23,13 +23,13 @@ describe 'Create profile', :create_profile do
     end
 
     def selectArea
-        xpathArea = '//*[@id="main"]/section/div/div[3]/div[3]/div/select'
+        xpathArea = '//*[@id="main"]/section/div/div/div/div[3]/div[3]/div/select'
         find(:xpath, xpathArea).click
         find("option[value='/areas/5760293099536384']").click
     end
 
     def selectRole
-        xpathRole = '//*[@id="main"]/section/div/div[3]/div[4]/div/select'
+        xpathRole = '//*[@id="main"]/section/div/div/div/div[3]/div[4]/div/select'
         find(:xpath, xpathRole).click
         find("option[value='/roles/5735735550279680']").click
     end
